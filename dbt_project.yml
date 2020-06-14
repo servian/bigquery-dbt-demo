@@ -1,0 +1,26 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'dbt_servian_demo' # project name
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'dbt-servian-demo' # should match the profile name defined in profiles.yml file
+
+# These configurations specify where dbt should look for different types of files.
+# The `source-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+source-paths: ["models"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+target-path: "target"  # directory which will store compiled SQL files
+
+
+# models (SQL to run)
+models:
+  dbt_servian_demo: #must match the profile name defined above
+      # best to have this match the the dataset name
+      medicare_provider_2011_analysis_dbt: #matches the model/medicare_provider_2011_analysis_dbt
+          materialized: table # type of materialization

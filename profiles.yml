@@ -1,0 +1,17 @@
+# For more information on how to configure this file, please see:
+# https://docs.getdbt.com/docs/profile
+dbt-servian-demo: #profile name
+  outputs:
+    dev: # environment config
+      type: bigquery 
+      method: oauth # can use service account as aunthentication too
+      project: graham-hamza-bq-dbt-webinar
+      dataset: medicare_provider_2011_analysis_dbt # dataset where dbt models will be saved
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      retries: 1
+  target: dev
+
+
