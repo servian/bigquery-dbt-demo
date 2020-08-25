@@ -1,22 +1,22 @@
 #!/bin/bash
 
-echo $'\n*****************COPYING PROFILE DETAILS INTO THE ROOTS DIR*****************'
-cp ./profiles.yml ~/.dbt/profiles.yml
+export dbt_dir=$PWD/dbt/
+export dbt_profile=$PWD/dbt/dbt-profile
 
-echo $'\n*****************DEBUG*****************'
-dbt debug
+echo $'\n*****************dbt DEBUG*****************'
+dbt debug --project-dir $dbt_dir --profiles-dir $dbt_profile
 
-#echo $'\n*****************COMPILE*****************'
-#dbt compile
+echo $'\n*****************dbt COMPILE*****************'
+dbt compile --project-dir $dbt_dir --profiles-dir $dbt_profile
+
+echo $'\n*****************dbt TEST*****************'
+dbt test --project-dir $dbt_dir --profiles-dir $dbt_profile
+
+echo $'\n*****************dbt RUN*****************'
+dbt run --project-dir $dbt_dir --profiles-dir $dbt_profile
 #
-#echo $'\n*****************TESTING DBT MODELS*****************'
-#dbt test
-#
-#echo $'\n*****************RUNNING DBT MODELS*****************'
-#dbt run
-#
-#echo $'\n*****************CLEANING UP DBT MODELS*****************'
-#dbt clean
+echo $'\n*****************dbt CLEAN*****************'
+dbt clean --project-dir $dbt_dir --profiles-dir $dbt_profile
 
 # echo $'\n***************** DBT GENERATE DOCS *****************'
 # dbt docs generate
