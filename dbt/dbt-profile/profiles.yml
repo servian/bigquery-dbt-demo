@@ -5,7 +5,7 @@ default:
       method: oauth
       project: graham-hamza-bq-dbt-webinar
       dataset: staging
-      threads: 1
+      threads: 5
       timeout_seconds: 300
       location: US
       priority: interactive
