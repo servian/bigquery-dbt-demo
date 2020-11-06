@@ -20,4 +20,4 @@ models:
   dbt_servian_demo: #must match the profile name defined above
       staging: #matches the model/staging
           +materialized: table # type of materialization
-          +schema: stg
+          +schema: staging
