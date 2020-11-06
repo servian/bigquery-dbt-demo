@@ -1,3 +1,5 @@
 dbt/target/
 dbt/logs/
 .idea/
+logs/
+dbt/dbt-profile/.user.yml
